@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dgNote">
+        <DataGrid x:Name="dgNote"> <!-- Создание таблицы -->
+            <DataGrid.Columns> <!-- Создание колонки -->
+                
+            </DataGrid.Columns>
             
         </DataGrid>
     </Grid>
