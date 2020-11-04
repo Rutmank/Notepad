@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dgNote" > <!-- Создание таблицы -->
+        <DataGrid x:Name="dgNote" > <!-- Создание таблицы d-->
             <DataGrid.Columns> <!-- Декларация колонок -->
                 <DataGridTextColumn Header="DateOfCreation" Width="180"/>  <!-- Создание колонки даты создания -->
                 <DataGridCheckBoxColumn Header="Done" Width="70"/> <!-- Статус выполнения задачи -->
