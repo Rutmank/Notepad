@@ -9,11 +9,9 @@
     <Grid>
         <DataGrid x:Name="dgNote" FontSize="17" FontWeight="Bold" Margin="10" > <!-- Создание таблицы. Размер шрифта, жирный шрифт, отступы от краев -->
             <DataGrid.Columns> <!-- Декларация колонок -->
-                <DataGridTextColumn Header="DateOfCreation" Width="180"/>  <!-- Создание колонки даты создания -->
-                <DataGridCheckBoxColumn Header="Done" Width="70"/> <!-- Статус выполнения задачи -->
-                <DataGridTextColumn Header="Task" Width="*"/> <!-- Описание задачи. Параметр ширины растягивается до конца экрана-->
-
-
+                <DataGridTextColumn IsReadOnly="True" Header="DateOfCreation" Width="180"/>  <!-- Создание колонки даты создания. Редактировать ее нельзя -->
+                <DataGridCheckBoxColumn IsReadOnly="False" Header="Done" Width="70"/> <!-- Статус выполнения задачи. Можно редактировать, как и внизу -->
+                <DataGridTextColumn IsReadOnly="False" Header="Task" Width="*"/> <!-- Описание задачи. Параметр ширины растягивается до конца экрана-->
             </DataGrid.Columns>
             
         </DataGrid>
