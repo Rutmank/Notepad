@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dgNote" > <!-- Создание таблицы -->
+        <DataGrid x:Name="dgNote" FontSize="16" FontWeight="Bold" > <!-- Создание таблицы. Размер шрифта и жирный шрифт -->
             <DataGrid.Columns> <!-- Декларация колонок -->
                 <DataGridTextColumn Header="DateOfCreation" Width="180"/>  <!-- Создание колонки даты создания -->
                 <DataGridCheckBoxColumn Header="Done" Width="70"/> <!-- Статус выполнения задачи -->
-                <DataGridTextColumn Header="Task"/> <!-- Описание задачи -->
+                <DataGridTextColumn Header="Task" Width="*"/> <!-- Описание задачи. Параметр ширины растягивается до конца экрана-->
 
 
             </DataGrid.Columns>
