@@ -11,6 +11,7 @@
             <DataGrid.Columns> <!-- Декларация колонок -->
                 <DataGridTextColumn Header="DateOfCreation" Width="180"/>  <!-- Создание колонки даты создания -->
                 <DataGridCheckBoxColumn Header="Done" Width="70"/> <!-- Статус выполнения задачи -->
+                <DataGridTextColumn Header="Task"/> <!-- Описание задачи -->
 
 
             </DataGrid.Columns>
