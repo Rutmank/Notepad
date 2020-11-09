@@ -8,5 +8,8 @@ namespace Notepad.Models
 {
     class DoModel
     {
+        public DateTime DateOfCreation { get; set; } = DateTime.Now; // Присваивание даты и времени в переменную
+
+        
     }
 }
