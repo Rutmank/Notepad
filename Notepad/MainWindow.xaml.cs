@@ -22,7 +22,7 @@ namespace Notepad
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BindingList<DoModel>
+        private BindingList<DoModel> _doData; // Контейнер для хранения модели задачи
         public MainWindow()
         {
             InitializeComponent();
