@@ -18,9 +18,9 @@ namespace Notepad.Models
             set { _isDone = value; }
         }
 
-        private string _text; // Переменная для обозначения в нем текста. 
+        public string _text; // Переменная для обозначения в нем текста. 
         
-        private string Text // Текст задачи
+        public string Text // Текст задачи
         {
         get { return _text; }
         set { _text = value; }

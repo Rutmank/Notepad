@@ -30,7 +30,12 @@ namespace Notepad
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            _doData = new BindingList<DoModel>() 
+            {
+                new DoModel(){Text = "test"},
+                new DoModel(){Text = "asdasd"}
+            };
+            dgNote.ItemsSource = _doData;
         }
     }
 }
