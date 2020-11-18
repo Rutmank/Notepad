@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Notepad.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,7 @@ namespace Notepad
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BindingList<DoModel>
         public MainWindow()
         {
             InitializeComponent();
