@@ -39,7 +39,7 @@ namespace Notepad
             _dataList.ListChanged += _dataList_ListChanged; // Подписывание на событие, фиксирующее изменения в листе
         }
 
-        private void _dataList_ListChanged(object sender, ListChangedEventArgs e) 
+        private void _dataList_ListChanged(object sender, ListChangedEventArgs e) // Cобытие, фиксирующее изменения в листе
         {
             throw new NotImplementedException();
         }
