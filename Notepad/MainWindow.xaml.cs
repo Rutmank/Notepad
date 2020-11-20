@@ -39,9 +39,29 @@ namespace Notepad
             _dataList.ListChanged += _dataList_ListChanged; // Подписывание на событие, фиксирующее изменения в листе
         }
 
-        private void _dataList_ListChanged(object sender, ListChangedEventArgs e) // Cобытие, фиксирующее изменения в листе
+        private void _dataList_ListChanged(object sender, ListChangedEventArgs e) // Cобытие, фиксирующее изменения в листе и сохраняющее их на диске
         {
-            throw new NotImplementedException();
+            switch (e.ListChangedType) // Список отслеживаемых событий с помощью ListChanged
+            {
+                case ListChangedType.Reset:
+                    break;
+                case ListChangedType.ItemAdded:
+                    break;
+                case ListChangedType.ItemDeleted:
+                    break;
+                case ListChangedType.ItemMoved:
+                    break;
+                case ListChangedType.ItemChanged:
+                    break;
+                case ListChangedType.PropertyDescriptorAdded:
+                    break;
+                case ListChangedType.PropertyDescriptorDeleted:
+                    break;
+                case ListChangedType.PropertyDescriptorChanged:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
