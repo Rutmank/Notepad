@@ -22,7 +22,7 @@ namespace Notepad
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BindingList<DoModel> _doData; //Контейнер для хранения модели задачи
+        private BindingList<DoModel> _dataList; //Контейнер для хранения модели задачи
         public MainWindow()
         {
             InitializeComponent();
@@ -30,12 +30,18 @@ namespace Notepad
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _doData = new BindingList<DoModel>() 
+            _dataList = new BindingList<DoModel>() 
             {
                 new DoModel(){Text = "test"},
                 new DoModel(){Text = "asdasd"}
             };
-            dgNote.ItemsSource = _doData;
+            dgNote.ItemsSource = _dataList;
+            _dataList.ListChanged += _dataList_ListChanged; // Подписывание на событие, фиксирующее изменения в листе
+        }
+
+        private void _dataList_ListChanged(object sender, ListChangedEventArgs e) 
+        {
+            throw new NotImplementedException();
         }
     }
 }
