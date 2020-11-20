@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Notepad.Models
 {
-    class DoModel: INotifyPropertyChanged
+    class DoModel: INotifyPropertyChanged 
     {
         public DateTime DateOfCreation { get; set; } = DateTime.Now; // Присваивание даты и времени в переменную
 
@@ -21,12 +21,17 @@ namespace Notepad.Models
 
         public string _text; // Переменная для обозначения в нем текста. 
 
-        public event PropertyChangedEventHandler PropertyChanged; // Имплементация INotifyPropertyChanged
-
         public string Text // Текст задачи
         {
         get { return _text; }
         set { _text = value; }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged; // Имплементация INotifyPropertyChanged, создание события
+
+        protected virtual void PropChanged(string propertyName = "") // вызов PropertyChanged и передача туда двух объектов
+        {
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); // 
         }
 
     }
