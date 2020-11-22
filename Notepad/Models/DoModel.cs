@@ -31,7 +31,11 @@ namespace Notepad.Models
 
         protected virtual void PropChanged(string propertyName = "") //вызов PropertyChanged и передача туда двух объектов
         {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); // 
+            if (PropertyChanged!=null) // проверка на пустое значение. Чтобы не было ошибки
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); // 
+            }
+            
         }
 
     }
