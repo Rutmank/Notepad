@@ -17,12 +17,11 @@ namespace Notepad.Models
         {
             get { return _isDone; }
             set 
-            { 
-                if (_isDone == value) // если isdone приходит из value, то действий нет
-                {
+            {
+                if (_isDone == value) // если _isDone приходит из value, то действий нет, так как данные одни и те же
                     return;
-                }
-                _isDone = value; 
+                    _isDone = value;
+                PropChanged("IsDone");
             }
         }
 
@@ -31,7 +30,11 @@ namespace Notepad.Models
         public string Text // Текст задачи
         {
         get { return _text; }
-        set { _text = value; }
+        set 
+            {
+                if (_text == value) // если _text приходит из value, то действий нет, так как данные одни и те же
+                    return;
+                _text = value; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged; // Имплементация INotifyPropertyChanged, создание события
