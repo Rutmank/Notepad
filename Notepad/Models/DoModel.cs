@@ -13,7 +13,7 @@ namespace Notepad.Models
 
         private bool _isDone; // Переменная для обозначения завершения задачи
 
-        public bool IsDone // Состояние задачи
+        public bool IsDone // Состояние задачи. Чекбокс
         {
             get { return _isDone; }
             set 
@@ -34,10 +34,12 @@ namespace Notepad.Models
             {
                 if (_text == value) // если _text приходит из value, то действий нет, так как данные одни и те же
                     return;
-                _text = value; }
+                _text = value;
+                PropChanged("Text");
+            }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged; // Имплементация INotifyPropertyChanged, создание события
+        public event PropertyChangedEventHandler PropertyChanged; // Имплементация INotifyPropertyChanged, создание события для обозначения изменений элементов
 
         protected virtual void PropChanged(string propertyName = "") //вызов PropertyChanged и передача туда двух объектов
         {

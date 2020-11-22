@@ -10,7 +10,7 @@
         <DataGrid x:Name="dgNote" FontSize="17" FontWeight="Bold" Margin="10" AutoGenerateColumns="False"> <!-- Создание таблицы Размер шрифта, жирный шрифт, отступы от краев -->
             <DataGrid.Columns> <!-- Декларация колонок -->
                 <DataGridTextColumn Binding="{Binding Path= DateOfCreation}" IsReadOnly="True" Header="DateOfCreation" Width="180"/>  <!--Создание колонки даты создания. Редактировать ее нельзя -->
-                <DataGridCheckBoxColumn Binding="{Binding Path= IsDone}" IsReadOnly="False" Header="Done" Width="70"/> <!-- Статус выполнения задачи. Можно редактировать, как и внизу -->
+                <DataGridCheckBoxColumn Binding="{Binding Path= IsDone, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" Header="Done" Width="70"/> <!-- Статус выполнения задачи. Можно редактировать, как и внизу -->
                 <DataGridTextColumn Binding="{Binding Path= Text}"  IsReadOnly="False" Header="Task" Width="*"/> <!-- Описание задачи. Параметр ширины растягивается до конца экрана-->
             </DataGrid.Columns>
             
