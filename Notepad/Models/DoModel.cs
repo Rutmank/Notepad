@@ -29,7 +29,7 @@ namespace Notepad.Models
 
         public event PropertyChangedEventHandler PropertyChanged; // Имплементация INotifyPropertyChanged, создание события
 
-        protected virtual void PropChanged(string propertyName = "") //вызовPropertyChanged и передача туда двух объектов
+        protected virtual void PropChanged(string propertyName = "") //вызов PropertyChanged и передача туда двух объектов
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); // 
         }
