@@ -16,7 +16,14 @@ namespace Notepad.Models
         public bool IsDone // Состояние задачи
         {
             get { return _isDone; }
-            set { _isDone = value; }
+            set 
+            { 
+                if (_isDone == value) // если isdone приходит из value, то действий нет
+                {
+                    return;
+                }
+                _isDone = value; 
+            }
         }
 
         public string _text; // Переменная для обозначения в нем текста. 
@@ -33,7 +40,7 @@ namespace Notepad.Models
         {
             if (PropertyChanged!=null) // проверка на пустое значение. Чтобы не было ошибки
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); // 
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); 
             }
             
         }
