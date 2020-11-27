@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Notepad.Json
 {
-    class InOutput // для обработки данных используется Json, методы для считывания и сохраненияданных
+    class InOutput // для обработки данных используется Json, методы для считывания и сохранения данных
     {
 
     }
