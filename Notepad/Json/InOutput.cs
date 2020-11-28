@@ -25,7 +25,7 @@ namespace Notepad.Json
 
         public void SaveData(BindingList<DoModel> _dataList) // Сохранение данных на жесткий диск
         {
-            using (StreamWriter writer = File.CreateText(PATH)) // using позволяет автоматически использовать метод dispose для освобождения памяти
+            using (StreamWriter writer = File.CreateText(PATH)) //using позволяет автоматически использовать метод dispose для освобождения памяти
             { // Передается путь к файлу
                 string output = JsonConvert.SerializeObject(_dataList);
                 writer.Write(output);
