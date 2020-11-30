@@ -21,7 +21,11 @@ namespace Notepad.Json
 
         public BindingList<DoModel> LoadData() // Считывание данных 
         {
-            return null;
+            var fileExists = File.Exists(PATH);
+            if (true)
+            {
+
+            }
         }
 
         public void SaveData(BindingList<DoModel> _dataList) // Сохранение данных на жесткий диск
