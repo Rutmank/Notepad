@@ -1,4 +1,5 @@
-﻿using Notepad.Models;
+﻿using Newtonsoft.Json;
+using Notepad.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +28,8 @@ namespace Notepad.Json
         {
             using (StreamWriter writer = File.CreateText(PATH)) //using позволяет автоматически использовать метод dispose для освобождения памяти
             { // Передается путь к файлу
-                string output = JsonConvert.SerializeObject(_dataList);
-                writer.Write(output);
+                string output = JsonConvert.SerializeObject(_dataList); // Сериализация в поток, а затем в строку
+                writer.Write(output); // Строка записывается в файл
             }
         }
     }
