@@ -21,7 +21,7 @@ namespace Notepad.Json
 
         public BindingList<DoModel> LoadData() // Считывание данных 
         {
-            var fileExists = File.Exists(PATH); // проверка на существование файла через путь к файлу
+            var fileExists = File.Exists(PATH); //проверка на существование файла через путь к файлу
             if (!fileExists) // цикл для проверки
             {
                 File.CreateText(PATH).Dispose();
