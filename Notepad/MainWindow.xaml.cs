@@ -34,7 +34,9 @@ namespace Notepad
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _inOutput = new InOutput(PATH); // передача в конструктор пути 
-            _dataList = 
+
+            _dataList = _inOutput.LoadData(); //  получение данных
+
             dgNote.ItemsSource = _dataList;
             _dataList.ListChanged += _dataList_ListChanged; // Подписывание на событие, фиксирующее изменения в листе
         }
