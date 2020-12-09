@@ -19,7 +19,7 @@ namespace Notepad.Json
             PATH = path;
         }
 
-        public BindingList<DoModel> LoadData() // Считывание данных 
+        public BindingList<DoModel> LoadData() // Считывание ( загрузка ) данных 
         {
             var fileExists = File.Exists(PATH); // проверка на существование файла через путь к файлу
             if (!fileExists) // цикл для проверки
