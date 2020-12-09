@@ -21,11 +21,16 @@ namespace Notepad.Json
 
         public BindingList<DoModel> LoadData() // Считывание данных 
         {
-            var fileExists = File.Exists(PATH); //проверка на существование файла через путь к файлу
+            var fileExists = File.Exists(PATH); // проверка на существование файла через путь к файлу
             if (!fileExists) // цикл для проверки
             {
-                File.CreateText(PATH).Dispose();
-                return new BindingList<DoModel>();
+                File.CreateText(PATH).Dispose(); // если файла не существует, то он создается, с указанием пути. Dispose высвобождает ресурс
+                return new BindingList<DoModel>(); // возвращается пустой список
+            }
+            using (var reader = File.OpenText(PATH)) // opentext выполняет чтение из файла ( по пути )
+            {
+                var fileText = reader.ReadToEnd(); // данные считываются в строку
+                return JsonConvert.DeserializeObject<BindingList<DoModel>>(fileText); // данные десериализируются ( восстанавливается из байтов) в коллекцию  и возвращается
             }
         }
 
