@@ -23,9 +23,9 @@ namespace Notepad
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly string PATH = $"{Environment.CurrentDirectory}\\dataList.json";
+        private readonly string PATH = $"{Environment.CurrentDirectory}\\dataList.json"; // создание пути файла
         private BindingList<DoModel> _dataList; //Контейнер для хранения модели задачи
-        private InOutput inOutput;
+        private InOutput _inOutput;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,12 +33,8 @@ namespace Notepad
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _inOutput = new InOutput()
-            _dataList = new BindingList<DoModel>() 
-            {
-                new DoModel(){Text = "test"},
-                new DoModel(){Text = "asdasd"}
-            };
+            _inOutput = new InOutput(PATH); // передача в конструктор пути 
+            _dataList = 
             dgNote.ItemsSource = _dataList;
             _dataList.ListChanged += _dataList_ListChanged; // Подписывание на событие, фиксирующее изменения в листе
         }
