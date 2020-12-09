@@ -1,4 +1,5 @@
-﻿using Notepad.Models;
+﻿using Notepad.Json;
+using Notepad.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,9 @@ namespace Notepad
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly string PATH = $"{Environment.CurrentDirectory}\\dataList.json";
         private BindingList<DoModel> _dataList; //Контейнер для хранения модели задачи
+        private InOutput inOutput;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace Notepad
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            _inOutput = new InOutput()
             _dataList = new BindingList<DoModel>() 
             {
                 new DoModel(){Text = "test"},
