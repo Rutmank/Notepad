@@ -35,7 +35,15 @@ namespace Notepad
         {
             _inOutput = new InOutput(PATH); // передача в конструктор пути 
 
-            _dataList = _inOutput.LoadData(); //  получение данных
+            try
+            {
+                _dataList = _inOutput.LoadData(); //  получение данных
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Если происходит ошибка, то на экран выводится это сообщение
+            }
+            
 
             dgNote.ItemsSource = _dataList;
             _dataList.ListChanged += _dataList_ListChanged; // Подписывание на событие, фиксирующее изменения в листе
