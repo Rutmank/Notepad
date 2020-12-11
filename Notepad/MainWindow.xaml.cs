@@ -42,6 +42,7 @@ namespace Notepad
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // Если происходит ошибка, то на экран выводится это сообщение
+                this.Close(); // приложение закрывается
             }
             
 
